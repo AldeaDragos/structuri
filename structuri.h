@@ -252,10 +252,50 @@ struct Bilete {
 
 struct Clasa2 {
 
-	char nume;
-	char prenume;
+	char nume[15];
+	char prenume[20];
 	int media1;
 	int media2;
 	int media3;
+
+};
+
+struct BazeDeDate {
+
+	char prenume[15];
+	char nume[15];
+	int salariu;
+	int varsta;
+	char functie[15];
+	int numar_de_telefon;
+	char email[40];
+
+	void afisare() {
+
+		cout << "Prenume : " << prenume << endl;
+		cout << "Nume : " << nume << endl;
+		cout << "Salariu : " << salariu << endl;
+		cout << "Varsta : " << varsta << endl;
+		cout << "Functia : " << functie << endl;
+		cout << "Numar de telefon : " << numar_de_telefon << endl;
+		cout << "Email : " << email << endl;
+
+	}
+
+};
+
+struct Evenimente {
+
+	int ore;
+	int minute;
+	int secunde;
+
+	void afisare() {
+
+		cout << "Ore : " << ore << endl;
+		cout << "Minute : " << minute << endl;
+		cout << "Secudne : " << secunde << endl;
+
+	}
 
 };

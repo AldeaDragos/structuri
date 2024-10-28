@@ -798,3 +798,79 @@ void sol16() {
 
 
 }
+
+void sol17() {
+
+	BazeDeDate bd1;
+	strcpy_s(bd1.prenume, "Len");
+	strcpy_s(bd1.nume, "Trexler ");
+	bd1.salariu = 100000;
+	bd1.varsta = 55;
+	strcpy_s(bd1.functie, "SpyMaster");
+	bd1.numar_de_telefon = 5554440192;
+	strcpy_s(bd1.email, "lt@sp.com");
+
+	BazeDeDate bd2;
+	strcpy_s(bd2.prenume, "Oliver ");
+	strcpy_s(bd2.nume, "Regina  ");
+	bd2.salariu = 0;
+	bd2.varsta = 37;
+	strcpy_s(bd2.functie, "Vigilante ");
+	bd2.numar_de_telefon = 1234567890;
+	strcpy_s(bd2.email, "or@vg.com");
+
+
+	BazeDeDate bd3;
+	strcpy_s(bd3.prenume, "Sterling  ");
+	strcpy_s(bd3.nume, "Archer   ");
+	bd3.salariu = 1000000;
+	bd3.varsta = 43;
+	strcpy_s(bd3.functie, "Agent   ");
+	bd3.numar_de_telefon = 8423565491;
+	strcpy_s(bd3.email, " sa@ag.com");
+
+	BazeDeDate baze[100] = { bd1,bd2,bd3 };
+
+	int p;
+	cout << "p = ";;
+	cin >> p;
+
+	char c[10] = "-";
+	cout << "c = ";
+	cin >> c;
+
+	if (p == 2 && strcmp(c,"+")) {
+		cout << "Sortare dupa nume " << endl;
+		sortareDupaNume(baze, 3);
+	}
+
+	if (p == 2 && strcmp(c, "-")) {
+		cout << "Sortare dupa nume descrescator " << endl;
+		sortareDupaNumeDesc(baze, 3);
+	}
+
+
+	for (int i = 0; i < 3; i++) {
+		baze[i].afisare();
+		cout << "======================" << endl;
+	}
+}
+
+void sol18() {
+
+	Evenimente ev1;
+	ev1.ore = 3;
+	ev1.minute = 35;
+	ev1.secunde = 55;
+
+	Evenimente ev2;
+	ev2.ore = 2;
+	ev2.minute = 40;
+	ev2.secunde = 8;
+
+	Evenimente eveniment[100] = { ev1,ev2 };
+
+	afisareFormat(eveniment, 2);
+
+
+}

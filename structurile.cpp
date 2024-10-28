@@ -3,6 +3,6 @@
 int main()
 {
 
-	sol16();
+	sol18();
 
 }

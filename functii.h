@@ -521,16 +521,10 @@ void penMaxAnalfabetic(Bilete bilet[], int dim) {
 
 }
 
-int mediaGenerala(Clasa2 clasele[],int dim) {
+int mediaGenerala(Clasa2 elev) {
 
-	int suma = 0;
-
-	for (int i = 0; i < dim; i++) {
-
-		suma = clasele[i].media1 + clasele[i].media2 + clasele[i].media3;
-
-	}
-	return suma / dim;
+			
+	return (elev.media1 + elev.media2 + elev.media3) / 3;
 }
 
 void nrCopiMedGen(Clasa2 clasele[], int dim) {
@@ -560,5 +554,75 @@ void nrCopiMedGen(Clasa2 clasele[], int dim) {
 	}
 
 	cout << "Numarul elevilor cu media generala >= media clasei: " << ct << endl;
+
+}
+
+void sortareDupaNumeDesc(BazeDeDate baze[], int dim) {
+
+	bool sortat = false;
+
+	do {
+
+		sortat = true;
+
+		for (int i = 0; i < dim-1; i++) {
+
+			if (strcmp(baze[i].nume, baze[i + 1].nume) < 0) {
+
+				BazeDeDate aux = baze[i];
+				baze[i] = baze[i + 1];
+				baze[i + 1] = aux;
+				sortat = false;
+
+			}
+
+		}
+
+	} while (sortat == false);
+
+}
+
+void sortareDupaNume(BazeDeDate baze[], int dim) {
+
+	bool sortat = false;
+
+	do {
+
+		sortat = true;
+
+		for (int i = 0; i < dim - 1; i++) {
+
+			if (strcmp(baze[i].nume, baze[i + 1].nume) > 0) {
+
+				BazeDeDate aux = baze[i];
+				baze[i] = baze[i + 1];
+				baze[i + 1] = aux;
+				sortat = false;
+
+			}
+
+		}
+
+	} while (sortat == false);
+
+}
+
+void afisareFormat(Evenimente eveniment[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		cout << eveniment[i].ore << ": " << eveniment[i].minute << ": " << eveniment[i].secunde << endl;
+
+	}
+
+}
+
+void durateExpInSec(Evenimente eveniment[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if(eveniment[i].ore=60*eveniment[i].minute)
+
+	}
 
 }
