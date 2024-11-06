@@ -619,10 +619,291 @@ void afisareFormat(Evenimente eveniment[], int dim) {
 
 void durateExpInSec(Evenimente eveniment[], int dim) {
 
+
 	for (int i = 0; i < dim; i++) {
 
-		if(eveniment[i].ore=60*eveniment[i].minute)
+		cout << (eveniment[i].ore * 60) * 60 + eveniment[i].minute * 60 + eveniment[i].secunde << endl;
 
 	}
+}
+
+void sumaEvenDurata(Evenimente eveniment[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if ((eveniment[i].secunde + eveniment[i + 1].secunde )>= 60) {
+
+			eveniment[i].minute = eveniment[i].minute + 1;
+
+			if ((eveniment[i].minute + eveniment[i + 1].minute) >= 60) {
+
+				eveniment[i].ore = eveniment[i].ore+1;
+
+				cout << eveniment[i].ore + eveniment[i + 1].ore << ": " << eveniment[i].minute + eveniment[i + 1].minute << ": " << eveniment[i].secunde + eveniment[i + 1].secunde << endl;
+
+			}
+
+		}
+
+	}
+
+}
+
+void anDouaMii(Elev elevi[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if (elevi[i].dn.an == 2000) {
+
+			cout << elevi[i].nume << endl;
+		}
+		else {
+			cout << elevi[i].dn.zi << " " << elevi[i].dn.luna << " " << elevi[i].dn.an << endl;
+		}
+
+	}
+
+}
+
+
+
+void adaugarePunctPoligon(Poligon& p, int x, int y, int pozitie) {
+
+	Punct punct;
+	punct.x = x;
+	punct.y = y;
+	p.vf[pozitie] = punct;
+}
+
+void citire(Poligon& p) {
+
+	
+	cout << "Introduceti nr de puncte" << endl;
+	int n;
+	cin >> n;
+
+	p.nrVf = n;
+		
+	for (int i = 0; i <n; i++) {
+		int x;
+		int y;
+		cout << "x" << i+1 << "=";
+		cin >> x;
+		cout << "y" << i+1 << "=";
+		cin >> y;
+		adaugarePunctPoligon(p, x, y,i);
+
+	}
+
+}
+
+void afisare(Poligon p) {
+
+	for (int i = 0; i < p.nrVf; i++) {
+
+		cout << "( " << p.vf[i].x << " , " << p.vf[i].y << " )" << endl;
+
+	}
+
+}
+
+void comparareElevi(Elev1 E1, Elev1 E2) {
+
+
+
+
+	if (E1.dn.luna < E2.dn.luna) {
+
+		cout << E1.nume;
+
+	}
+
+	else if (E1.dn.luna == E2.dn.luna && E1.dn.zi < E2.dn.zi) {
+
+		cout << E1.nume;
+
+	}
+	else {
+		cout << E2.nume;
+	}
+
+
+
+}
+
+void adaugareParteNumar(Complex z, int pre, int pim) {
+
+	Complex numar;
+	numar.pre = pre;
+	numar.pim = pim;
+
+}
+
+void citire(Complex z) {
+
+	z.pim = 0;
+	z.pre = 0;
+
+	int pre;
+	int pim;
+	cout << "Partea reala este = ";;
+	cin >> pre;
+	cout << "Partea imaginara este = ";
+	cin >> pim;
+	adaugareParteNumar(z, pre, pim);
+}
+
+void afisareModul(Complex z) {
+
+
+	cout << "|z| = " << sqrt(pow(z.pim, 2) + pow(z.pre, 2)) << endl;
+
+}
+
+
+void adaugarePunctPoligon1(Poligon1& p, int x, int y, int pozitie) {
+
+	Punct1 punct;
+	punct.x = x;
+	punct.y = y;
+	p.v[pozitie] = punct;
+}
+
+void citire(Poligon1& p) {
+
+
+	cout << "Introduceti nr de puncte" << endl;
+	int n;
+	cin >> n;
+
+	for (int i = 0; i < n; i++) {
+		int x;
+		int y;
+		cout << "x" << i + 1 << "=";
+		cin >> x;
+		cout << "y" << i + 1 << "=";
+		cin >> y;
+		adaugarePunctPoligon1(p, x, y, i);
+
+	}
+
+}
+
+int pePrimaBisectoare(Punct2 A,Punct2 B) {
+
+	if ((A.x == A.y) && (B.x == B.y)) {
+		return true;
+	}
+
+	return false;
+}
+
+int seAflaPeAxa(Punct3 A, Punct3 B) {
+
+	if ((A.x == 0 && B.x == 0)||(A.y==0 && B.y==0)) {
+		return true;
+	}
+
+	return false;
+}
+
+void valoareTotalaStock(Magazin magazine[],int dim) {
+
+	int valoareTotala = 0;
+
+	for (int i = 0; i < dim; i++) {
+
+		for (int j = 0; j < magazine[i].nrProduse; j++) {
+
+			valoareTotala = magazine[i].p[j].cant * magazine[i].p[j].pret;
+
+			cout << valoareTotala << " ";
+
+		}
+
+	}
+}
+
+void citireJucatori(Echipa E) {
+
+	for (int i = 0; i < E.nrJucatori; i++) {
+
+		cout << "Introduceti numarul de tricouri pentru jucatorul" << i + 1 << ": ";
+		cin >> E.juc[i].nrTricou;
+
+		cout << "Introduceti marimea tricoului pentru jucatorul" << i + 1 << ": ";
+		cin >> E.juc[i].marimeTricou;
+	}
+
+}
+
+void afisareEchipa(Echipa E) {
+
+	for (int i = 0; i < E.nrJucatori; i++) {
+
+		cout << "Jucatorul " << i + 1 << ": ";
+		cout << "Nr Tricou =  " << E.juc[i].nrTricou << ": ";
+		cout << "Marime Tricou =  " << E.juc[i].marimeTricou << endl;
+
+	}
+	
+}
+
+void turnuriFormaCub(Turn turnuri[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if (turnuri[i].inaltime == turnuri[i].lungime && turnuri[i].inaltime == turnuri[i].latime) {
+
+			cout << "Turnul " << i + 1 << " este un cub de culoare " << turnuri[i].culoare << "." << endl;
+
+		}
+
+	}
+
+}
+
+void noteBac(RezBac candidati[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+
+		if (candidati[i].inf >= 5 && candidati[i].rom >= 5 && candidati[i].mat >= 5 && (candidati[i].mat + candidati[i].rom + candidati[i].inf) / 3 >= 6) {
+			cout << "Candidatul " << i+1 << " a primit calificativul A "<< endl;
+		}
+		else {
+			cout << "Candidatul " << i + 1 << " a primit calificativul  R" << endl;
+		}
+
+	}
+
+}
+
+void nrNumitorMin(Fractie fractii[], int dim) {
+
+	int ct = 0;
+
+	int numitorMinim = fractii[0].numitor;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (fractii[i].numitor < numitorMinim) {
+			numitorMinim = fractii[i].numitor;
+		}
+
+	}
+
+	cout << "Cel mai mic numitor este " << numitorMinim << endl;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (fractii[i].numitor == numitorMinim) {
+
+			ct++;
+
+		}
+
+	}
+
+	cout << "Cel mai mic numitor apare in " << ct << " fractii" << endl;
 
 }

@@ -872,5 +872,353 @@ void sol18() {
 
 	afisareFormat(eveniment, 2);
 
+	cout << "===================" << endl;
 
+	durateExpInSec(eveniment, 2);
+
+	cout << "===================" << endl;
+
+	sumaEvenDurata(eveniment, 2);
+}
+
+// VARIANTE 
+
+// VARIANTA 1
+
+void sol19() {
+
+	Elev e1;
+	strcpy_s(e1.nume, "Guse");
+	e1.dn.an = 2000;
+	e1.dn.luna = 9;
+	e1.dn.zi = 14;
+
+	Elev e2;
+	strcpy_s(e2.nume, "Matei");
+	e2.dn.an = 2004;
+	e2.dn.luna = 4;
+	e2.dn.zi = 23;
+
+	Elev e3;
+	strcpy_s(e3.nume, "Andrei");
+	e3.dn.an = 2000;
+	e3.dn.luna = 5;
+	e3.dn.zi = 9;
+
+	Elev elevi[5] = { e1,e2,e3 };
+
+	anDouaMii(elevi, 3);
+
+
+}
+
+void sol20() {
+
+	Poligon p1;
+
+	p1.nrVf = 0;
+
+	citire(p1);
+
+	cout << endl;
+
+	cout << "Afisare Poligon " << endl;
+
+	afisare(p1);
+}
+
+void sol21() {
+
+	Elev1 E1;
+	strcpy_s(E1.nume, "Mircea");
+	E1.dn.an = 2006;
+	E1.dn.luna = 4;
+	E1.dn.zi = 12;
+
+	Elev1 E2;
+	strcpy_s(E2.nume, "Ionut");
+	E2.dn.an = 2006;
+	E2.dn.luna = 5;
+	E2.dn.zi = 15;
+
+	comparareElevi(E1, E2);
+
+}
+
+//TEMA
+
+void sol22() {
+
+	Punct2 A, B;
+
+	cout << "Introduceti coordonatele punctului A (x,y): ";
+	cin >> A.x >> A.y;
+	cout << "Introduceti coordonatele punctului B (x,y): ";
+	cin >> B.x >> B.y;
+
+	if (pePrimaBisectoare(A, B)) {
+
+		cout << "Segementul AB se afla pe prima bisectoare " << endl;
+
+	}
+	else {
+		cout << "Segementul AB nu se afla pe prima bisectoare " << endl;
+	}
+
+}
+
+void sol23() {
+
+	Punct3 A, B;
+
+	cout << "Introduceti coordonatele punctului A (x,y): ";
+	cin >> A.x >> A.y;
+	cout << "Introduceti coordonatele punctului B (x,y): ";
+	cin >> B.x >> B.y;
+
+	if (seAflaPeAxa(A, B)) {
+
+		cout << "Segementul AB se afla pe axa OX " << endl;
+
+	}
+	else {
+		cout << "Segementul AB nu se afla pe axa OX " << endl;
+	}
+
+}
+
+void sol24() {
+
+	Triunghi t;
+	cout << "Introduceti laturile triunghiului a: ";
+	cin >> t.a >> t.b >> t.c;
+
+
+	if (t.a == t.b && t.a != t.c || t.a == t.c && t.a != t.b || t.c == t.b && t.a != t.c) {
+		cout << "Este un triunghi isoscel " << endl;
+	}
+	else{
+
+		cout << "Este nu este triunghi isoscel " << endl;
+	}
+}
+
+void sol25() {
+
+	Magazin m1, m2, m3;
+
+	m1.p[0] = { 1, 30, 30 };
+	m1.nrProduse = 1;
+
+	m2.p[0] = { 2, 15, 50 };
+	m2.nrProduse = 1;
+
+	m3.p[0] = { 3, 45, 20 };
+	m3.nrProduse = 1;
+
+	Magazin magazine[3] = { m1,m2,m3 };
+
+	valoareTotalaStock(magazine, 3);
+
+}
+
+void sol26() {
+
+	cout << "Introduceti numarul maxim de jucatori : ";
+	cin >> E.nrJucatori;
+
+	citireJucatori(E);
+
+	afisareEchipa(E);
+
+}
+
+void sol27() {
+
+	Turn t1;
+	strcpy_s(t1.culoare, "Rosu");
+	t1.inaltime = 30;
+	t1.lungime = 60;
+	t1.latime = 40;
+
+	Turn t2;
+	strcpy_s(t2.culoare, "Albastru");
+	t2.inaltime = 50;
+	t2.lungime = 50;
+	t2.latime = 50;
+
+	Turn t3;
+	strcpy_s(t3.culoare, "Verde");
+	t3.inaltime = 20;
+	t3.lungime = 20;
+	t3.latime = 20;
+
+	Turn t4;
+	strcpy_s(t4.culoare, "Galben");
+	t4.inaltime = 45;
+	t4.lungime = 30;
+	t4.latime = 25;
+
+	Turn t5;
+	strcpy_s(t5.culoare, "Portocaliu");
+	t5.inaltime = 80;
+	t5.lungime = 40;
+	t5.latime = 30;
+
+	Turn turnuri[5] = { t1,t2,t3,t4,t5 };
+
+	turnuriFormaCub(turnuri, 5);
+
+}
+
+void sol28() {
+
+	Produs1 p1;
+	p1.cod = 101;
+	p1.data_expirarii.luna = 12;
+	p1.data_expirarii.an = 2025;
+	p1.pret_furnizor[0] = 15.5;
+	p1.pret_furnizor[1] = 14.9;
+
+	Produs1 p2;
+	p2.cod = 102;
+	p2.data_expirarii.luna = 6;
+	p2.data_expirarii.an = 2024;
+	p2.pret_furnizor[0] = 10.5;
+	p2.pret_furnizor[1] = 11.0;
+
+	Produs1 p3;
+	p3.cod = 103;
+	p3.data_expirarii.luna = 3;
+	p3.data_expirarii.an = 2026;
+	p3.pret_furnizor[0] = 20.0;
+	p3.pret_furnizor[1] = 19.8;
+
+	Produs1 p4;
+	p4.cod = 104;
+	p4.data_expirarii.luna = 11;
+	p4.data_expirarii.an = 2023;
+	p4.pret_furnizor[0] = 25.5;
+	p4.pret_furnizor[1] = 24.9;
+
+	Produs1 produse[4] = { p1,p2,p3,p4 };
+
+	for (int i = 0; i < 4; i++) {
+
+		produse[i].afisare();
+
+	}
+}
+
+void sol29() {
+
+	RezBac candidat1;
+	candidat1.inf = 6;
+	candidat1.mat = 8;
+	candidat1.rom = 9;
+
+
+	RezBac candidat2;
+	candidat2.inf = 9;
+	candidat2.mat = 10;
+	candidat2.rom = 8;
+
+	RezBac candidat3;
+	candidat3.inf =8;
+	candidat3.mat = 10;
+	candidat3.rom = 4;
+
+	RezBac candidati[10] = { candidat1,candidat2,candidat3 };
+
+	noteBac(candidati, 3);
+}
+
+void sol30(){
+
+	Campanie c1;
+	strcpy_s(c1.titlu, "Reduceri");
+	c1.startCampanie.luna = 1;
+	c1.startCampanie.an = 2025;
+	c1.procent = 20;
+
+	Campanie c2;
+	strcpy_s(c2.titlu, "Promoții de vară");
+	c2.startCampanie.luna = 6;
+	c2.startCampanie.an = 2024;
+	c2.procent = 15;
+
+	Campanie c3;
+	strcpy_s(c3.titlu, "Campanie de Crăciun");
+	c3.startCampanie.luna = 12;
+	c3.startCampanie.an = 2023;
+	c3.procent = 25;
+
+	Campanie c4;
+	strcpy_s(c4.titlu, "Ofertă de primăvară");
+	c4.startCampanie.luna = 3;
+	c4.startCampanie.an = 2025;
+	c4.procent = 10;
+
+	Campanie c5;
+	strcpy_s(c5.titlu, "Black Friday");
+	c5.startCampanie.luna = 11;
+	c5.startCampanie.an = 2024;
+	c5.procent = 50;
+
+	Campanie campanii[5] = { c1,c2,c3,c4,c5 };
+
+	for (int i = 0; i < 5; i++) {
+
+		campanii[i].afisare();
+
+	}
+
+}
+
+void sol31() {
+
+	Fractie fr1;
+	fr1.numarator = 10;
+	fr1.numitor = 5;
+
+
+	Fractie fr2;
+	fr2.numarator = 1;
+	fr2.numitor = 2;
+
+	Fractie fr3;
+	fr3.numarator = 3;
+	fr3.numitor = 4;
+
+	Fractie fr4;
+	fr4.numarator = 5;
+	fr4.numitor = 8;
+
+	Fractie fr5;
+	fr5.numarator = 7;
+	fr5.numitor = 10;
+
+	Fractie fr6;
+	fr6.numarator = 9;
+	fr6.numitor = 3;
+
+	Fractie fr7;
+	fr7.numarator = 6;
+	fr7.numitor = 2;
+
+	Fractie fr8;
+	fr8.numarator = 11;
+	fr8.numitor = 2;
+
+	Fractie fr9;
+	fr9.numarator = 15;
+	fr9.numitor = 5;
+
+	Fractie fr10;
+	fr10.numarator = 4;
+	fr10.numitor = 7;
+
+	Fractie fractii[10] = { fr1, fr2, fr3, fr4, fr5, fr6, fr7, fr8, fr9, fr10 };
+
+	nrNumitorMin(fractii, 10);
 }

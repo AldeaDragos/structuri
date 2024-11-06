@@ -299,3 +299,260 @@ struct Evenimente {
 	}
 
 };
+
+// Tema 
+
+// VARIANTE 
+
+// VARIANTA 1
+
+struct Elev {
+
+	char nume[21];
+	Data dn;
+
+
+};
+
+// VARIANTA 2
+
+struct Punct {
+
+	int x=0;
+	int y=0;
+
+};
+
+struct Poligon {
+
+	Punct vf[100];
+
+	int nrVf;
+
+};
+
+// VARIANTA 3
+
+struct Elev1 {
+
+	char nume[21];
+	Data dn;
+
+};
+
+//VARIANTA 4
+//a+bi
+//a -->partea reala
+//bi-->partea imaginara
+struct Complex {
+
+	//Partea reala
+	int pre;
+	//Partea imaginare
+	int pim;
+
+};
+
+//VARIANTA 5
+
+struct Punct1 {
+
+	float x;
+	float y;
+
+};
+
+struct Poligon1 {
+
+	int nr;
+	Punct1 v[101];
+	float per = 0;
+
+};
+
+//VARIANTA 6
+
+struct Punct2 {
+
+	float x;
+	float y;
+
+
+};
+
+//VARIANTA 7
+
+struct Punct3 {
+
+	float x;
+	float y;
+
+};
+
+//VARIANTA 9
+
+struct Triunghi {
+
+	float a;
+	float b;
+	float c;
+
+
+};
+
+//VARIANTA 10
+
+struct Produs {
+
+	int cod;
+	float cant;
+	float pret;
+
+};
+
+struct Magazin {
+
+	Produs p[100];
+	int nrProduse;
+
+};
+
+//VARIANTA 11
+
+struct Jucator {
+
+	int nrTricou;
+	int marimeTricou;
+
+};
+
+struct Echipa {
+
+	int nrJucatori;
+	Jucator juc[20];
+
+}E ;
+
+//VARIANTA 12
+
+struct Fisier {
+
+	char nume[30];
+	char extensie[5];
+
+};
+
+struct Dosar {
+
+	Fisier F[100];
+	int nrFisiere;
+
+}D;
+
+// VARIANTA 13
+
+struct Turn {
+
+	int lungime;
+	int latime;
+	int inaltime;
+	char culoare[20];
+
+};
+
+// VARIANTA 14
+
+struct Punct4 {
+
+	float x;
+	float y;
+
+};
+
+struct Cerc {
+
+	Punct4 centru;
+	int raza;
+
+};
+
+// VARIANTA 15
+
+struct DataExpirare {
+
+	int luna;
+	int an;
+
+};
+
+struct Produs1 {
+
+	int cod;
+	DataExpirare data_expirarii;
+	double pret_furnizor[2];
+
+	void afisare() {
+
+		cout << "Cod Produs : " << cod << endl;
+		cout << "Data expirarii : " << data_expirarii.luna << " / " << data_expirarii.an << endl;
+		cout << "Pret furnizor 1: " << pret_furnizor[0] << endl;
+		cout << "Pret furnizor 2: " << pret_furnizor[1] << endl;
+	}
+
+};
+
+// VARIANTA 16
+
+struct RezBac {
+
+	int mat;
+	int rom;
+	int inf;
+
+	char rez;
+
+};
+
+// VARIANTA 18
+
+struct Start {
+
+	int luna;
+	int an;
+
+};
+
+struct Campanie {
+
+	char titlu[20];
+	Start startCampanie;
+		int procent;
+
+	void afisare() {
+
+		cout << "Titlul : " << titlu << endl;
+		cout << "Luna Inceperii : " << startCampanie.luna << endl;
+		cout << "Anul Inceperii : " << startCampanie.an << endl;
+		cout << "Procent Discount : " << procent << endl;
+	}
+
+};
+
+// VARIANTA 19
+
+struct Produs5 {
+
+	char denumire[41];
+	Data dexp;
+
+};
+
+// VARIANTA 20
+
+struct Fractie {
+
+	int numitor;
+	int numarator;
+
+};
+
